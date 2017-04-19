@@ -1,0 +1,45 @@
+#footer { 
+	padding: 2em 1em 2em 1em; 
+	/*background: #0f1921 url(../images/footer_bg.gif) bottom repeat-x; */
+	background: #3a567e url(../images/bg.gif) center center repeat-y;
+	}
+label { 
+	font: 1.2em Tahoma; 
+	font-weight: bold; 
+	color: #7c7c7c;
+	vertical-align:middle;
+	display:inline-block; 
+	}
+/* copyright：最下面版权Div */
+#copyright {
+	font-family: Tahoma;
+	color: #7c7c7c;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0px;
+	line-height: 25px;
+	width: 100%;
+	text-align: center;
+	/*background-color: white;*/
+	font-size: 12px;
+	/*position: absolute;*/
+	bottom: 0px;
+	border-top: 1px solid rgb(235, 235, 235);
+}
+#by{
+	font-size: medium;	
+	font-style: oblique;
+	color: gray;
+	
+}
+#footer .header { border-top: 1px solid #1f3444; border-bottom: 1px solid #1f3444; }
+#footer h3 { margin: .1em 0 .1em 0; padding-left: .5em; background: #1f3444; font: 1em verdana; line-height: 1.6em; font-weight: bold; color: #fff; }
+#footer ul { margin-top: 2em; background: url(../images/footer_li_trim.gif) top repeat-x; list-style-position: inside; list-style-type: none; }
+#footer ul li { background: url(../images/footer_li_trim.gif) bottom repeat-x; }
+#footer ul li a { display: block; padding-left: 2em; background: url(../images/bullet.gif) .5em center no-repeat; font: 1.1em Lucida Sans Unicode, Trebuchet MS, Sans; line-height: 2em; text-decoration: none; color: #fff; }
+#footer ul li:hover { background: #1a2f3f; }
+#footer p { margin-top: 1.6em; font: 1.2em Lucida Sans Unicode, Trebuchet MS, Sans; line-height: 1.5em; color: #fff; }
+#footer .credit { text-align: center; }
+#footer .credit a { color: #fff; text-decoration: none; }
+#footer .credit a:hover { text-decoration: underline; }
+	

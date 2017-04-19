@@ -1,0 +1,33 @@
+#sidebar { 
+	padding: 1em 1em 2em 1em; 
+	background: #ecf1f9; 
+	border-top: 1px solid #fff; 
+	border-left: 1px solid #fff;
+	background:transparent;
+	 }
+#sidebar h2 { 
+	font: 1.8em verdana; 
+	line-height: 2.2em; 
+	color: #656565;
+	 }
+#sidebar ul { 
+	border-top: 1px solid #e5e5e5; 
+	list-style-position: inside; 
+	list-style-type: none; }
+#sidebar ul li { 
+	padding-left: 2em; 
+	background: url(../images/folder.gif) left center no-repeat; 
+	border-bottom: 1px solid #e5e5e5; 
+	}
+#sidebar ul li a { 
+	display: block; 
+	font: 1.1em Lucida Sans Unicode, Trebuchet MS, Sans; 
+	line-height: 2em; 
+	text-decoration: none; 
+	color: #5d5d5d; 
+	}
+#sidebar ul li a:hover { 
+	/*background: #e5ecf8;*/
+	background:orange;
+  
+	}

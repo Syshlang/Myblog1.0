@@ -1,0 +1,16 @@
+#search_box { 
+	padding: 2em 1em 2em 1em; 
+	background: #e5ecf8; 
+	border-left: 1px solid #fff; 
+	background:transparent;
+	
+	}
+#search_box input { 
+	float: left; 
+	width: 11em; 
+	margin-top: .3em; }
+#search_box .button_wrapper { 
+	float: left; 
+	width: 6em !important; 
+	margin-left: .5em; }
+.clear { clear: both; }

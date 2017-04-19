@@ -1,0 +1,292 @@
+js替代marquee实现图片无缝滚动
+
+可能大家都碰到过，当marquee中滚动的是图片的时候，滚到终点的时候直接就跳回到起点了，而不像文字那样可以无缝滚动，下面介绍的是通过js来实现图片的无缝滚动。
+先了解一下下面这几个属性：
+
+innerHTML:     设置或获取位于对象起始和结束标签内的 HTML
+scrollHeight:     获取对象的滚动高度。
+scrollLeft:       设置或获取位于对象左边界和窗口中目前可见内容的最左端之间的距离
+scrollTop:       设置或获取位于对象最顶端和窗口中可见内容的最顶端之间的距离
+scrollWidth:      获取对象的滚动宽度
+offsetHeight:    获取对象相对于版面或由父坐标 offsetParent 属性指定的父坐标的高度
+offsetLeft:       获取对象相对于版面或由 offsetParent 属性指定的父坐标的计算左侧位置
+offsetTop:       获取对象相对于版面或由 offsetTop 属性指定的父坐标的计算顶端位置
+offsetWidth:     获取对象相对于版面或由父坐标 offsetParent 属性指定的父坐标的宽度
+
+-----------------------------------------------------------------------
+
+图片向上无缝滚动
+
+<style type="text/css">
+<!--
+#demo {
+background: #FFF;
+overflow:hidden;
+border: 1px dashed #CCC;
+height: 100px;
+text-align: center;
+float: left;
+}
+#demo img {
+border: 3px solid #F2F2F2;
+display: block;
+}
+-->
+</style>
+向上滚动
+<div id="demo">
+<div id="demo1">
+<a href="#"><img src="http://www.cnrui.cn/other/link/Clear_logo.gif" border="0" /></a>
+<a href="#"><img src="http://www.cnrui.cn/other/link/Clear_logo.gif" border="0" /></a>
+<a href="#"><img src="http://www.cnrui.cn/other/link/Clear_logo.gif" border="0" /></a>
+<a href="#"><img src="http://www.cnrui.cn/other/link/Clear_logo.gif" border="0" /></a>
+<a href="#"><img src="http://www.cnrui.cn/other/link/Clear_logo.gif" border="0" /></a>
+</div>
+<div id="demo2"></div>
+</div>
+
+<script>
+<!--
+var speed=10; //数字越大速度越慢
+var tab=document.getElementByIdx_x("demo");
+var tab1=document.getElementByIdx_x("demo1");
+var tab2=document.getElementByIdx_x("demo2");
+tab2.innerHTML=tab1.innerHTML; //克隆demo1为demo2
+function Marquee(){
+if(tab2.offsetTop-tab.scrollTop<=0)//当滚动至demo1与demo2交界时
+tab.scrollTop-=tab1.offsetHeight //demo跳到最顶端
+else{
+tab.scrollTop++
+}
+}
+var MyMar=setInterval(Marquee,speed);
+tab.onmouseover=function() {clearInterval(MyMar)};//鼠标移上时清除定时器达到滚动停止的目的
+tab.onmouseout=function() {MyMar=setInterval(Marquee,speed)};//鼠标移开时重设定时器
+-->
+</script>
+
+------------------------------------------------------------
+
+图片向下无缝滚动
+
+<style type="text/css">
+<!--
+#demo {
+background: #FFF;
+overflow:hidden;
+border: 1px dashed #CCC;
+height: 100px;
+text-align: center;
+float: left;
+}
+#demo img {
+border: 3px solid #F2F2F2;
+display: block;
+}
+-->
+</style>
+向下滚动
+<div id="demo">
+<div id="demo1">
+<a href="#"><img src="http://www.cnrui.cn/other/link/Clear_logo.gif" border="0" /></a>
+<a href="#"><img src="http://www.cnrui.cn/other/link/Clear_logo.gif" border="0" /></a>
+<a href="#"><img src="http://www.cnrui.cn/other/link/Clear_logo.gif" border="0" /></a>
+<a href="#"><img src="http://www.cnrui.cn/other/link/Clear_logo.gif" border="0" /></a>
+<a href="#"><img src="http://www.cnrui.cn/other/link/Clear_logo.gif" border="0" /></a>
+</div>
+<div id="demo2"></div>
+</div>
+
+<script>
+<!--
+var speed=10; //数字越大速度越慢
+var tab=document.getElementByIdx_x("demo");
+var tab1=document.getElementByIdx_x("demo1");
+var tab2=document.getElementByIdx_x("demo2");
+tab2.innerHTML=tab1.innerHTML; //克隆demo1为demo2
+tab.scrollTop=tab.scrollHeight
+function Marquee(){
+if(tab1.offsetTop-tab.scrollTop>=0)//当滚动至demo1与demo2交界时
+tab.scrollTop+=tab2.offsetHeight //demo跳到最顶端
+else{
+tab.scrollTop--
+}
+}
+var MyMar=setInterval(Marquee,speed);
+tab.onmouseover=function() {clearInterval(MyMar)};//鼠标移上时清除定时器达到滚动停止的目的
+tab.onmouseout=function() {MyMar=setInterval(Marquee,speed)};//鼠标移开时重设定时器
+-->
+</script>
+
+--------------------------------------------------------
+
+图片向左无缝滚动
+
+<style type="text/css">
+<!--
+#demo {
+background: #FFF;
+overflow:hidden;
+border: 1px dashed #CCC;
+width: 500px;
+}
+#demo img {
+border: 3px solid #F2F2F2;
+}
+#indemo {
+float: left;
+width: 800%;
+}
+#demo1 {
+float: left;
+}
+#demo2 {
+float: left;
+}
+-->
+</style>
+向左滚动
+<div id="demo">
+<div id="indemo">
+<div id="demo1">
+<a href="#"><img src="http://www.cnrui.cn/other/link/Clear_logo.gif" border="0" /></a>
+<a href="#"><img src="http://www.cnrui.cn/other/link/Clear_logo.gif" border="0" /></a>
+<a href="#"><img src="http://www.cnrui.cn/other/link/Clear_logo.gif" border="0" /></a>
+<a href="#"><img src="http://www.cnrui.cn/other/link/Clear_logo.gif" border="0" /></a>
+<a href="#"><img src="http://www.cnrui.cn/other/link/Clear_logo.gif" border="0" /></a>
+<a href="#"><img src="http://www.cnrui.cn/other/link/Clear_logo.gif" border="0" /></a>
+</div>
+<div id="demo2"></div>
+</div>
+</div>
+
+<script>
+<!--
+var speed=10; //数字越大速度越慢
+var tab=document.getElementByIdx_x("demo");
+var tab1=document.getElementByIdx_x("demo1");
+var tab2=document.getElementByIdx_x("demo2");
+tab2.innerHTML=tab1.innerHTML;
+function Marquee(){
+if(tab2.offsetWidth-tab.scrollLeft<=0)
+tab.scrollLeft-=tab1.offsetWidth
+else{
+tab.scrollLeft++;
+}
+}
+var MyMar=setInterval(Marquee,speed);
+tab.onmouseover=function() {clearInterval(MyMar)};
+tab.onmouseout=function() {MyMar=setInterval(Marquee,speed)};
+-->
+</script>
+
+------------------------------------------------------
+
+图片向右无缝滚动
+
+<style type="text/css">
+<!--
+#demo {
+background: #FFF;
+overflow:hidden;
+border: 1px dashed #CCC;
+width: 500px;
+}
+#demo img {
+border: 3px solid #F2F2F2;
+}
+#indemo {
+float: left;
+width: 800%;
+}
+#demo1 {
+float: left;
+}
+#demo2 {
+float: left;
+}
+-->
+</style>
+向右滚动
+<div id="demo">
+<div id="indemo">
+<div id="demo1">
+<a href="#"><img src="http://www.cnrui.cn/other/link/Clear_logo.gif" border="0" /></a>
+<a href="#"><img src="http://www.cnrui.cn/other/link/Clear_logo.gif" border="0" /></a>
+<a href="#"><img src="http://www.cnrui.cn/other/link/Clear_logo.gif" border="0" /></a>
+<a href="#"><img src="http://www.cnrui.cn/other/link/Clear_logo.gif" border="0" /></a>
+<a href="#"><img src="http://www.cnrui.cn/other/link/Clear_logo.gif" border="0" /></a>
+<a href="#"><img src="http://www.cnrui.cn/other/link/Clear_logo.gif" border="0" /></a>
+</div>
+<div id="demo2"></div>
+</div>
+</div>
+
+<script>
+<!--
+var speed=10; //数字越大速度越慢
+var tab=document.getElementByIdx_x("demo");
+var tab1=document.getElementByIdx_x("demo1");
+var tab2=document.getElementByIdx_x("demo2");
+tab2.innerHTML=tab1.innerHTML;
+function Marquee(){
+if(tab.scrollLeft<=0)
+tab.scrollLeft+=tab2.offsetWidth
+else{
+tab.scrollLeft--;
+}
+}
+var MyMar=setInterval(Marquee,speed);
+tab.onmouseover=function() {clearInterval(MyMar)};
+tab.onmouseout=function() {MyMar=setInterval(Marquee,speed)};
+-->
+</script>
+
+ 
+
+ 
+
+--------------------------------------------------------
+
+最后，如果有人想一个页面有两个滚动图片集，一个往左一个往右，那下面的能用了。我把js都加个i了，还有css
+
+---------------------------------------------------------
+
+向右滚动
+<div id="demoi">
+<div id="indemoi">
+<div id="demoi1">
+<a href="#"><img src="http://www.cnrui.cn/other/link/Clear_logo.gif" border="0" /></a>
+<a href="#"><img src="http://www.cnrui.cn/other/link/Clear_logo.gif" border="0" /></a>
+<a href="#"><img src="http://www.cnrui.cn/other/link/Clear_logo.gif" border="0" /></a>
+<a href="#"><img src="http://www.cnrui.cn/other/link/Clear_logo.gif" border="0" /></a>
+<a href="#"><img src="http://www.cnrui.cn/other/link/Clear_logo.gif" border="0" /></a>
+</div>
+<div id="demoi2"></div>
+</div>
+</div>
+
+<script>
+<!--
+var speedi=10; //数字越大速度越慢
+var tabi=document.getElementByIdx_x("demoi");
+var tabi1=document.getElementByIdx_x("demoi1");
+var tabi2=document.getElementByIdx_x("demoi2");
+tabi2.innerHTML=tabi1.innerHTML;
+function Marqueei(){
+if(tabi.scrollLeft<=0)
+tabi.scrollLeft+=tabi2.offsetWidth
+else{
+tabi.scrollLeft--;
+}
+}
+var MyMari=setInterval(Marqueei,speedi);
+tabi.onmouseover=function() {clearInterval(MyMari)};
+tabi.onmouseout=function() {MyMari=setInterval(Marqueei,speedi)};
+-->
+</script>
+
+
+ 
+
+来自：http://hi.baidu.com/psxiep/blog/item/5aa0890ac438b60e94ca6b78.html

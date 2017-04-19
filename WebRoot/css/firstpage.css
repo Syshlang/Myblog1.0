@@ -1,0 +1,47 @@
+.post .meta { 
+	padding-bottom: .1em; 
+	border-bottom: 1px solid #f0f0f0; }
+
+.comment { 
+	margin-top: .2em; 
+	padding: .9em; 
+	background: #edf3fa; 
+	border: 1px solid #dfdfdf; 
+	}	 
+
+.comments h2{}
+ h2 { 
+	margin-bottom: 1em; 
+	border-bottom: 1px solid #f0f0f0; 
+	font: 1.8em verdana; 
+	line-height: 2.2em; 
+	color: #656565; }
+.alt { 
+	background: #fafafa; 
+	}
+.meta { 
+	margin-bottom: .8em; 
+	padding-bottom: 0; 
+	border-bottom-width: 0; }
+.meta span { float: left; }
+.meta span a { 
+	font: 1.3em verdana; 
+	font-weight: bold; 
+	text-decoration: none; 
+	color: #b45b4a; }
+.meta span a:hover { 
+	text-decoration: underline; 
+	color: #a44e4e; }
+.meta span a:visited { color: #64a869; }
+.meta span small { 
+	font: 1em verdana; 
+	font-weight: bold; 
+	color: #666; 
+	}
+.meta .datetime { 
+	float: right; 
+	font: .9em verdana; 
+	color: #b45b4a; 
+	}
+
+	

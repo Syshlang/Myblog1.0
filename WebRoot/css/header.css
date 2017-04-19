@@ -1,0 +1,48 @@
+#scene { 
+	position: relative; 
+	width: 77em; 
+	/*height: 16.8em; */
+	height:20.8em;
+	margin-bottom: .4em; 
+	border: 1px solid #516980; 
+	border-top-width: 0; 
+	/*opacity:0.1;*/
+	background:transparent;
+	}
+#scene img { 
+	width: 40%; 
+	height: 20.8em; }
+/*scene上显示的文字*/
+#blink  { 
+	position: absolute; 
+	top: .9em; 
+	left: 1.2em; 
+	font: 2.8em Lucida Sans Unicode, Trebuchet MS, Sans; 
+	color: #fff;
+	 }
+#blink1  { 
+	font-size: 20px;
+	 }
+/*页面调节*/
+
+#scale_area { 
+	position: absolute; 
+	bottom: 0; 
+	left: 1em; 
+	width: 28em; 
+	height: 1.9em; }
+
+#scale_knob { 
+	width: 7.4em; 
+	height: 1.3em; 
+	padding: .3em; 
+	background: #3e5a82; 
+	border: 1px solid #102c54; 
+	border-bottom-width: 0; 
+	font: 1em Lucida Sans Unicode, Trebuchet MS, Sans; 
+	font-weight: bold; 
+	text-align: center; 
+	color: #fff; 
+	cursor: pointer; 
+	}
+
